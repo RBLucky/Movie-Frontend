@@ -28,7 +28,7 @@ const Movie = (props) => {
         setMovie(response.data);
         console.log(response.data);
       })
-      .catch((e) => {
+      .catch(e => {
         console.log(e);
       });
   };
