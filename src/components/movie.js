@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MovieDataService from "../services/movies";
+import movieDataService from "../services/movies";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -23,7 +23,7 @@ const Movie = (props) => {
 
   //getting a specific movie's information
   const getMovie = (id) => {
-    MovieDataService.get(id)
+    movieDataService.get(id)
       .then((response) => {
         setMovie(response.data);
         console.log(response.data);
@@ -40,7 +40,7 @@ const Movie = (props) => {
 
   const deleteReview = (reviewId, index) => {
     //identify review by review and user ids
-    MovieDataService.deleteReview(reviewId, props.user.id)
+    movieDataService.deleteReview(reviewId, props.user.id)
       .then((response) => {
         setMovie((prevState) => {
           //put index into splice method to remove that review from list/database
