@@ -22,7 +22,7 @@ const Movie = (props) => {
   });
 
   //getting a specific movie's information
-  const getMovie = (id) => {
+  const getMovie = id => {
     movieDataService.get(id)
       .then((response) => {
         setMovie(response.data);
