@@ -22,13 +22,14 @@ const Movie = (props) => {
   });
 
   //getting a specific movie's information
-  const getMovie = id => {
-    movieDataService.get(id)
-      .then(response => {
+  const getMovie = (id) => {
+    movieDataService
+      .get(id)
+      .then((response) => {
         setMovie(response.data);
         console.log(response.data);
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
       });
   };
@@ -40,7 +41,8 @@ const Movie = (props) => {
 
   const deleteReview = (reviewId, index) => {
     //identify review by review and user ids
-    movieDataService.deleteReview(reviewId, props.user.id)
+    movieDataService
+      .deleteReview(reviewId, props.user.id)
       .then((response) => {
         setMovie((prevState) => {
           //put index into splice method to remove that review from list/database
@@ -69,23 +71,23 @@ const Movie = (props) => {
               <Card.Header as="h5">{movie.title}</Card.Header>
               <Card.Body>
                 <Card.Text>{movie.plot}</Card.Text>
-                {props.user && (
+                {props.user && 
                   <Link to={"/movies/" + props.match.params.id + "/review"}>
                     Add Review
                   </Link>
-                )}
+                }
               </Card.Body>
             </Card>
             <br></br>
             <h2>Reviews</h2>
-            <br></br>
+            {/*<br></br>*/}
             {/* mapping reviews for movie*/}
-            {movie.reviews.map((review, index) => {
+            {/*{movie.reviews.map((review, index) => {
               return (
                 <Media key={index}>
-                  <Media.Body>
+                  <Media.Body>*/}
                     {/* username and date posted. date is formatteed */}
-                    <h5>
+                    {/*<h5>
                       {review.name + " reviewed on "}{" "}
                       {moment(review.date).format("Do MMMM YYYY")}
                     </h5>
@@ -104,9 +106,9 @@ const Movie = (props) => {
                           >
                             Edit
                           </Link>
-                        </Col>
+                        </Col>*/}
                         {/* link to delete */}
-                        <Col>
+                        {/*<Col>
                           <Button
                             variant="link"
                             onClick={() => deleteReview(review._id, index)}
@@ -119,7 +121,7 @@ const Movie = (props) => {
                   </Media.Body>
                 </Media>
               );
-            })}
+            })}*/}
           </Col>
         </Row>
       </Container>
