@@ -6,6 +6,7 @@ const Login = (props) => {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
 
+  //when default state is changed
   const onChangeName = (e) => {
     const name = e.target.value;
     setName(name);
