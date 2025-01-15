@@ -107,9 +107,10 @@ const Movie = (props) => {
                         </Col>
                         {/* link to delete */}
                         <Col>
+                          {/* pass in review_id & index from the movie.reviews.map function */}
                           <Button
                             variant="link"
-                            onClick={() => deleteReview(review._id, index)}
+                            onClick={() => deleteReview(review._id, index)} // call the deleteReview function from above
                           >
                             Delete
                           </Button>
