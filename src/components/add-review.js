@@ -56,13 +56,14 @@ const AddReview = (props) => {
 
   return (
     <div>
-      {/* uses a ternary operator */}
+      {/* uses a ternary operator
+      // if adding a new review */}
       {submitted ? (
         <div>
           <h4>Review submitted successfully</h4>
           <Link to={"/movies/" + props.match.params.id}>Back to Movie</Link>
         </div>
-      ) : (
+      ) : {/* if editing an exisiting review */} (
         <Form>
           <Form.Group>
             <Form.Label>{editing ? "Edit" : "Create"} Review</Form.Label>
