@@ -13,10 +13,10 @@ const MoviesList = (props) => {
   const [searchTitle, setSearchTitle] = useState("");
   const [searchRating, setSearchRating] = useState("");
   const [ratings, setRatings] = useState(["All Ratings"]);
-  //ch 23
+  //*23
   const [currentPage, setCurrentPage] = useState(0); //keep track of current page shown
   const [entriesPerPage, setEntriesPerPage] = useState(0); //particular page
-  //ch 24
+  //*24
   const [currentSearchMode, setCurrentSearchMode] = useState(""); //can findByTitle or by Rating
 
   useEffect(() => {
@@ -50,14 +50,14 @@ const MoviesList = (props) => {
   }, []);
 
   const retrieveMovies = () => {
-    //ch 23
+    //*23
     setCurrentSearchMode("");
     MovieDataService.getAll(currentPage)
       .then((response) => {
         console.log(response.data);
         setMovies(response.data.movies); // assign to movies state
         setCurrentPage(response.data.page);
-        //ch 23
+        //*23
         setEntriesPerPage(response.data.entries_per_page);
       })
       .catch((e) => {
@@ -87,7 +87,7 @@ const MoviesList = (props) => {
   };
 
   const find = (query, by) => {
-    //ch 23
+    //*23
     MovieDataService.find(query, by, currentPage) //adding currentPage argument
       .then((response) => {
         console.log(response.data);
@@ -99,12 +99,12 @@ const MoviesList = (props) => {
   };
   // find function sypported by below two methods
   const findByTitle = () => {
-    //ch 24
+    //*24
     setCurrentSearchMode("findByTitle");
     find(searchTitle, "title"); // Pass the searchTitle and currentPage to the API call
   };
   const findByRating = () => {
-    //ch 24
+    //*24
     setCurrentSearchMode("findByRating");
     if (searchRating === "All Ratings") {
       retrieveMovies();
