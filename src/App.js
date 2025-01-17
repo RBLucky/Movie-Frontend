@@ -7,6 +7,7 @@ import MoviesList from "./components/movies-list";
 import Movie from "./components/movie";
 import Login from "./components/login";
 import { Nav, Navbar } from "react-bootstrap";
+import {Helmet} from "react-helmet";
 
 function App() {
   const [user, setUser] = React.useState(null);
@@ -20,6 +21,12 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>My Title</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="Movie Reviews App" />
+      </Helmet>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand>Movie Reviews</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
