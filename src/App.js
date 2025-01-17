@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Title</title>
+        <title>Movie Reviews</title>
         <link rel="canonical" href="http://mysite.com/example" />
         <meta name="description" content="Movie Reviews App" />
       </Helmet>
