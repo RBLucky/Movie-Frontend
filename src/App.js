@@ -24,7 +24,7 @@ function App() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Movie Reviews</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link rel="canonical" href="https://movie-review-lma6.onrender.com/" />
         <meta name="description" content="Movie Reviews App" />
       </Helmet>
       <Navbar bg="light" expand="lg">
