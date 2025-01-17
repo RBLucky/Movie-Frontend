@@ -24,7 +24,7 @@ const MoviesList = (props) => {
     //page is changed and can be filtered according title etc.
     // eslint-disable-next-line
   }, [currentSearchMode]);
-  //ch 23
+  //*23
 
   //retrieve next page is rendered once only
   useEffect(() => {
@@ -35,7 +35,7 @@ const MoviesList = (props) => {
   }, [currentPage]);
 
   //uses if logic to invoke functions
-  //ch 23
+  //*23
   const retrieveNextPage = () => {
     if (currentSearchMode === "findByTitle") findByTitle();
     else if (currentSearchMode === "findByRating") findByRating();
