@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MovieDataService from "../services/movies";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import {Helmet} from "react-helmet";
 
 const AddReview = (props) => {
   let editing = false;
@@ -56,6 +57,13 @@ const AddReview = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Add a Review</title>
+        <link rel="canonical" href="https://movie-review-lma6.onrender.com/" />
+        <meta name="description" content="Movie Reviews App" />
+      </Helmet>
+
       {/* uses a ternary operator
       // if adding a new review */}
       {submitted ? (
